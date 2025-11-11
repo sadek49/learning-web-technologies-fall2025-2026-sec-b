@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Page 8 - Final Assignment Form</title>
+</head>
+<body>
+
+<h2>Page 8 – Final Assignment Form</h2>
+
+<form onsubmit="return validatePage8()">
+
+  <h3>1. Full Name</h3>
+  <input type="text" id="fullname" placeholder="Enter your full name">
+  <p id="error" style="color:red;"></p>
+
+  <h3>2. Email</h3>
+  <input type="text" id="email" placeholder="example@example.com">
+  <p id="emailError" style="color:red;"></p>
+
+  <h3>3. Gender</h3>
+  <label><input type="radio" name="gender" value="Male"> Male</label>
+  <label><input type="radio" name="gender" value="Female"> Female</label>
+  <label><input type="radio" name="gender" value="Others"> Others</label>
+  <p id="genderError" style="color:red;"></p>
+
+  <h3>4. Date of Birth</h3>
+  <label>DD:</label><input type="text" id="dd" placeholder="0–31">
+  <label>MM:</label><input type="text" id="mm" placeholder="1–12">
+  <label>YYYY:</label><input type="text" id="yyyy" placeholder="1900–2016">
+  <p id="dateError" style="color:red;"></p>
+
+  <h3>5. Education Level</h3>
+  <label><input type="checkbox" name="edu" value="SSC"> SSC</label>
+  <label><input type="checkbox" name="edu" value="HSC"> HSC</label>
+  <label><input type="checkbox" name="edu" value="BSc"> BSc</label>
+  <p id="p5Error" style="color:red;"></p>
+
+  <h3>6. Blood Group</h3>
+  <select id="bloodGroup">
+    <option value="">--Select--</option>
+    <option value="A+">A+</option>
+    <option value="A-">A-</option>
+    <option value="B+">B+</option>
+    <option value="B-">B-</option>
+    <option value="O+">O+</option>
+    <option value="O-">O-</option>
+    <option value="AB+">AB+</option>
+    <option value="AB-">AB-</option>
+  </select>
+  <p id="bloodError" style="color:red;"></p>
+
+  <h3>7. User ID & Picture</h3>
+  <label>User ID:</label>
+  <input type="number" id="userId"><br>
+  <label>Upload Picture:</label>
+  <input type="file" id="pictureFile">
+  <p id="userIdError" style="color:red;"></p>
+  <p id="pictureError" style="color:red;"></p>
+
+  <p id="finalMessage" style="color:green; font-weight:bold;"></p>
+  <br>
+  <input type="submit" value="Submit All">
+
+</form>
+
+<script src="script.js"></script>
+
+</body>
+</html>

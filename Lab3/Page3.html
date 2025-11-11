@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page 3 - Gender Validation</title>
+</head>
+<body>
+
+    <h2>Page 3 - Gender Validation</h2>
+    <label><b><h4>Gender</h4></b></label>
+
+    <form onsubmit="return validateGenderPage3()">
+
+        <label><input type="radio" name="gender" value="Male"> Male</label><br>
+        <label><input type="radio" name="gender" value="Female"> Female</label><br>
+        <label><input type="radio" name="gender" value="Others"> Others</label><br>
+
+        <p id="genderError" style="color:red;"></p>
+        <p id="genderSuccess" style="color:green;"></p>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
