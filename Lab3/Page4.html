@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page 4 - Date Validation</title>
+</head>
+<body>
+
+    <h2>Page 4 - Date Validation</h2>
+    <label><b><h4>Date Of Birth</h4></b></label>
+
+    <form onsubmit="return validateDatePage4()">
+
+        <label>DD:</label>
+        <input type="text" id="dd" placeholder="0-31"><br><br>
+
+        <label>MM:</label>
+        <input type="text" id="mm" placeholder="1-12"><br><br>
+
+        <label>YYYY:</label>
+        <input type="text" id="yyyy" placeholder="1900-2016"><br><br>
+
+        <p id="dateError" style="color:red;"></p>
+        <p id="dateSuccess" style="color:green;"></p>
+
+        <input type="submit" value="Submit">
+
+    </form>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

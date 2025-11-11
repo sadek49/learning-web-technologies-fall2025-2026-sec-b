@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page 5 - Education Level Validation</title>
+</head>
+<body>
+
+    <h2>Page 5 - Select Education Level (At least one required)</h2>
+
+    <form onsubmit="return validatePage5()">
+
+        <label><input type="checkbox" name="edu" value="SSC"> SSC</label><br>
+        <label><input type="checkbox" name="edu" value="HSC"> HSC</label><br>
+        <label><input type="checkbox" name="edu" value="BSc"> BSc</label><br>
+
+        <p id="p5Error" style="color:red;"></p>
+        <p id="p5Success" style="color:green;"></p>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
