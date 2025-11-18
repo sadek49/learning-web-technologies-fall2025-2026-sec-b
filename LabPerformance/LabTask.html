@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+</head>
+<body>
+    <h2>Registration Form</h2>
+
+    <b>Enter field name to add:</b><br>
+    <input type="text" id="fieldInput" placeholder="Type: username, password, email, phone, dob, gender">
+    <br><br>
+
+    <div id="usernameDiv" style="display:none;">
+        <b>Username</b><br>
+        <input type="text" id="inp1">
+        <button id="save1">Save</button>
+        <p id="msg1"></p>
+        <br>
+    </div>
+
+    <div id="passwordDiv" style="display:none;">
+        <b>Password</b><br>
+        <input type="password" id="inp2">
+        <button id="save2">Save</button>
+        <p id="msg2"></p>
+        <br>
+    </div>
+
+    <div id="emailDiv" style="display:none;">
+        <b>Email</b><br>
+        <input type="text" id="inp3">
+        <button id="save3">Save</button>
+        <p id="msg3"></p>
+        <br>
+    </div>
+
+    <div id="phoneDiv" style="display:none;">
+        <b>Phone Number</b><br>
+        <input type="text" id="inp4">
+        <button id="save4">Save</button>
+        <p id="msg4"></p>
+        <br>
+    </div>
+
+    <div id="dobDiv" style="display:none;">
+        <b>Date of Birth</b><br>
+        <input type="date" id="inp5">
+        <button id="save5">Save</button>
+        <p id="msg5"></p>
+        <br>
+    </div>
+
+    <div id="genderDiv" style="display:none;">
+        <b>Gender</b><br>
+        <select id="inp6">
+            <option value="">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <button id="save6">Save</button>
+        <p id="msg6"></p>
+        <br>
+    </div>
+
+    <button id="submitBtn">Submit</button>
+
+    <script>
+        let data1 = '';
+        let data2 = '';
+        let data3 = '';
+        let data4 = '';
+        let data5 = '';
+        let data6 = '';
+
+        document.getElementById('fieldInput').addEventListener('input', function() {
+            let field = document.getElementById('fieldInput').value;
+            
+            if (field == 'username') {
+                document.getElementById('usernameDiv').style.display = 'block';
+            } else if (field == 'password') {
+                document.getElementById('passwordDiv').style.display = 'block';
+            } else if (field == 'email') {
+                document.getElementById('emailDiv').style.display = 'block';
+            } else if (field == 'phone') {
+                document.getElementById('phoneDiv').style.display = 'block';
+            } else if (field == 'dob') {
+                document.getElementById('dobDiv').style.display = 'block';
+            } else if (field == 'gender') {
+                document.getElementById('genderDiv').style.display = 'block';
+            }
+        });
+
+        document.getElementById('save1').addEventListener('click', function() {
+            let val = document.getElementById('inp1').value;
+            if (val == '') {
+                alert('Username is empty');
+                return;
+            }
+            if (val.length < 3) {
+                alert('Username too short');
+                return;
+            }
+            data1 = val;
+            document.getElementById('msg1').innerHTML = 'Saved: ' + val;
+        });
+
+        document.getElementById('save2').addEventListener('click', function() {
+            let val = document.getElementById('inp2').value;
+            if (val == '') {
+                alert('Password is empty');
+                return;
+            }
+            if (val.length < 6) {
+                alert('Password too short');
+                return;
+            }
+            data2 = val;
+            document.getElementById('msg2').innerHTML = 'Saved';
+        });
+
+        document.getElementById('save3').addEventListener('click', function() {
+            let val = document.getElementById('inp3').value;
+            if (val == '') {
+                alert('Email is empty');
+                return;
+            }
+            let atpos = val.indexOf('@');
+            let dotpos = val.indexOf('.');
+            if (atpos == -1 || dotpos == -1) {
+                alert('Invalid email');
+                return;
+            }
+            data3 = val;
+            document.getElementById('msg3').innerHTML = 'Saved: ' + val;
+        });
+
+        document.getElementById('save4').addEventListener('click', function() {
+            let val = document.getElementById('inp4').value;
+            if (val == '') {
+                alert('Phone is empty');
+                return;
+            }
+            if (val.length != 11) {
+                alert('Phone must be 11 digits');
+                return;
+            }
+            if (val.charAt(0) != '0') {
+                alert('Phone must start with 0');
+                return;
+            }
+            let i;
+            for (i = 0; i < val.length; i++) {
+                if (val.charAt(i) < '0' || val.charAt(i) > '9') {
+                    alert('Phone must be numbers only');
+                    return;
+                }
+            }
+            data4 = val;
+            document.getElementById('msg4').innerHTML = 'Saved: ' + val;
+        });
+
+        document.getElementById('save5').addEventListener('click', function() {
+            let val = document.getElementById('inp5').value;
+            if (val == '') {
+                alert('Date of birth is empty');
+                return;
+            }
+            data5 = val;
+            document.getElementById('msg5').innerHTML = 'Saved: ' + val;
+        });
+
+        document.getElementById('save6').addEventListener('click', function() {
+            let val = document.getElementById('inp6').value;
+            if (val == '') {
+                alert('Gender is empty');
+                return;
+            }
+            data6 = val;
+            document.getElementById('msg6').innerHTML = 'Saved: ' + val;
+        });
+
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            if (data1 == '' || data2 == '' || data3 == '' || data4 == '' || data5 == '' || data6 == '') {
+                alert('Registration Unsuccessful');
+            } else {
+                alert('Registration Successful\n\nUsername: ' + data1 + '\nEmail: ' + data3 + '\nPhone: ' + data4 + '\nDate of Birth: ' + data5 + '\nGender: ' + data6);
+            }
+        });
+    </script>
+</body>
+</html>
